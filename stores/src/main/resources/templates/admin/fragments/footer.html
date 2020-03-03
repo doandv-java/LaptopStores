@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<th:block th:fragment="footer">
+    <!--Footer-->
+    <footer class="page-footer text-center font-small primary-color-dark darken-2 mt-4 wow fadeIn">
+        <!--Copyright-->
+        <div class="footer-copyright py-3">
+            © 2019 Copyright:
+            <a th:href="@{/home}"> Doan laptop stores </a>
+        </div>
+        <!--/.Copyright-->
+
+    </footer>
+    <!--/.Footer-->
+
+    <!--    Script-->
+    <script type="text/javascript"
+            th:src="@{/webjars/mdbootstrap-bootstrap-material-design/4.8.8/js/jquery-3.4.1.min.js}"></script>
+    <script type="text/javascript"
+            th:src="@{/webjars/mdbootstrap-bootstrap-material-design/4.8.8/js/popper.min.js}"></script>
+    <script type="text/javascript"
+            th:src="@{/webjars/mdbootstrap-bootstrap-material-design/4.8.8/js/bootstrap.min.js}"></script>
+    <script type="text/javascript"
+            th:src="@{/webjars/mdbootstrap-bootstrap-material-design/4.8.8/js/mdb.min.js}"></script>
+    <!--End Script-->
+
+</th:block>
+</body>
+</html>

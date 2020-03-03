@@ -1,10 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Đăng nhập</title>
+    <!--    Css-->
+    <link rel="stylesheet" th:href="@{/webjars/font-awesome/5.12.0/css/all.css}">
+    <link rel="stylesheet" th:href="@{/webjars/mdbootstrap-bootstrap-material-design/4.8.8/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/webjars/mdbootstrap-bootstrap-material-design/4.8.8/css/mdb.min.css}">
+    <link rel="stylesheet" th:href="@{/webjars/mdbootstrap-bootstrap-material-design/4.8.8/css/style.min.css}">
 </head>
 <body>
+<div class="container">
+    <div>
+        <div class="col align-self-center">
+            <!-- Default form login -->
+            <form class="text-center border border-light p-5" th:action="@{/login}" method="post">
+
+                <p class="h4 mb-4">Đăng nhập</p>
+                <div th:if="${param.error}">
+                    <div class="alert alert-danger center">
+                        Đăng nhập không thành công
+                    </div>
+                </div>
+                <!-- Email -->
+                <input type="email" id="username" name="username" class="form-control mb-4"
+                       placeholder="E-mail">
+
+                <!-- Password -->
+                <input type="password" id="password" name="password" class="form-control mb-4"
+                       placeholder="Mật khẩu">
+
+                <div class="d-flex justify-content-around">
+                    <div>
+                        <!-- Forgot password -->
+                        <a href="">Quên mật khẩu?</a>
+                    </div>
+                </div>
+
+                <!-- Sign in button -->
+                <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
+
+                <!-- Register -->
+                <p>Not a member?
+                    <a href="">Register</a>
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+<!--Script-->
+<script type="text/javascript"
+        th:src="@{/webjars/mdbootstrap-bootstrap-material-design/4.8.8/js/jquery-3.4.1.min.js}"></script>
+<script type="text/javascript"
+        th:src="@{/webjars/mdbootstrap-bootstrap-material-design/4.8.8/js/popper.min.js}"></script>
+<script type="text/javascript"
+        th:src="@{/webjars/mdbootstrap-bootstrap-material-design/4.8.8/js/bootstrap.min.js}"></script>
+<script type="text/javascript"
+        th:src="@{/webjars/mdbootstrap-bootstrap-material-design/4.8.8/js/mdb.min.js}"></script>
 
 </body>
 </html>

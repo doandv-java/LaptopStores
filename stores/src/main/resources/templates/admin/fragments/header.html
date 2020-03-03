@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<th:block th:fragment="header(user)">
+    <header>
+        <!-- Navbar -->
+        <!--        <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">-->
+        <!--            <div class="container-fluid">-->
+
+        <!--                &lt;!&ndash; Brand &ndash;&gt;-->
+        <!--                <a class="navbar-brand waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">-->
+        <!--                    <strong class="blue-text">DoanStores</strong>-->
+        <!--                </a>-->
+
+        <!--                &lt;!&ndash; Collapse &ndash;&gt;-->
+        <!--                <button class="navbar-toggler" type="button" data-toggle="collapse"-->
+        <!--                        data-target="#navbarSupportedContent"-->
+        <!--                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+        <!--                    <span class="navbar-toggler-icon"></span>-->
+        <!--                </button>-->
+        <!--                &lt;!&ndash; Links &ndash;&gt;-->
+        <!--                <div class="collapse navbar-collapse float-lg-right" id="navbarSupportedContent">-->
+        <!--                    &lt;!&ndash; Right &ndash;&gt;-->
+        <!--                    <ul class="navbar-nav nav-flex-icons">-->
+        <!--                        <li class="nav-item">-->
+        <!--                            <a th:href="@{/logout}" class="nav-link waves-effect">-->
+        <!--                                <i class="fab fa-sign-out-alt"></i>-->
+        <!--                            </a>-->
+        <!--                        </li>-->
+        <!--                        <li class="nav-item">-->
+        <!--                            <a th:href="@{/admin/profile}"-->
+        <!--                               class="nav-link border border-light rounded waves-effect">-->
+        <!--                                <i class="fab fa-user-circle-o"><span th:text="${user.name}"></span></i>-->
+        <!--                            </a>-->
+        <!--                        </li>-->
+        <!--                    </ul>-->
+
+        <!--                </div>-->
+
+        <!--            </div>-->
+        <!--        </nav>-->
+        <!-- Navbar -->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+            <div class="container-fluid">
+
+                <!-- Brand -->
+                <a class="navbar-brand waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">
+                    <strong class="blue-text">DoanStores</strong>
+                </a>
+
+                <!-- Collapse -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Links -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <!-- Left -->
+                    <ul class="navbar-nav mr-auto">
+
+
+                    </ul>
+
+                    <!-- Right -->
+                    <!-- Right -->
+                    <ul class="navbar-nav nav-flex-icons">
+                        <li class="nav-item">
+                            <a th:href="@{/logout}" class="nav-link waves-effect">
+                                <i class="fab fa-sign-out-alt"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a th:href="@{/admin/profile}"
+                               class="nav-link border border-light rounded waves-effect">
+                                <i class="fab fa-user-circle-o"><span th:text="${user.name}"></span></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </nav>
+        <!-- Navbar -->
+
+        <!-- Sidebar -->
+        <div class="sidebar-fixed position-fixed">
+
+            <a class="logo-wrapper waves-effect">
+                <img th:src="@{/images/logo.png}" class="img-fluid" alt="">
+            </a>
+
+            <div class="list-group list-group-flush">
+                <a th:href="@{/admin/home}" class="list-group-item active waves-effect">
+                    <i class="fas fa-chart-pie mr-3"></i>Trang chủ
+                </a>
+                <a th:href="@{/admin/profile}" class="list-group-item list-group-item-action waves-effect">
+                    <i class="fas fa-user mr-3"></i>Tài khoản</a>
+                <a th:href="@{/admin/employee}" class="list-group-item list-group-item-action waves-effect">
+                    <i class="fas fa-person-booth mr-3"></i>Nhân viên</a>
+                <a th:href="@{/admin/product}" class="list-group-item list-group-item-action waves-effect">
+                    <i class="fas fa-desktop mr-3"></i>Sản phẩm</a>
+                <a th:href="@{/admin/order}" class="list-group-item list-group-item-action waves-effect">
+                    <i class="fas fa-shopping-cart mr-3"></i>Đơn hàng</a>
+                <a th:href="@{/admin/category}" class="list-group-item list-group-item-action waves-effect">
+                    <i class="fas fa-list-alt mr-3"></i>Danh mục</a>
+                <a th:href="@{/admin/supply}" class="list-group-item list-group-item-action waves-effect">
+                    <i class="fas fa-procedures mr-3"></i>Nhà cung cấp</a>
+                <a th:href="@{/admin/advertise}" class="list-group-item list-group-item-action waves-effect">
+                    <i class="fas fa-adversal mr-3"></i>Quảng cáo</a>
+                <a th:href="@{/admin/warehouse}" class="list-group-item list-group-item-action waves-effect">
+                    <i class="fas fa-warehouse mr-3"></i>Kho</a>
+            </div>
+
+        </div>
+        <!-- Sidebar -->
+    </header>
+</th:block>
+</body>
+</html>
