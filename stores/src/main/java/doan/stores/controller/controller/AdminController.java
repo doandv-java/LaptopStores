@@ -33,6 +33,9 @@ public class AdminController {
     @GetMapping("/profile")
     public ModelAndView viewProfile() {
         ModelAndView mav = new ModelAndView();
+        UserDetails principal = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User user = userService.findUserByUserName(principal.getUsername());
+        mav.addObject("user", user);
         mav.setViewName("admin/profile");
         return mav;
     }
