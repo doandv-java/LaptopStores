@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<th:block th:fragment="header(user)">
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+            <div class="container-fluid">
+
+
+                <!-- Collapse -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Links -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <!-- Left -->
+                    <ul class="navbar-nav mr-auto">
+
+                    </ul>
+
+                    <!-- Right -->
+                    <ul class="navbar-nav nav-flex-icons">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="javascript:void(0);" id="navbarDropdownProfile"
+                               data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-user"><span th:text="${user.name}"></span></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
+                                <a class="dropdown-item" th:href="@{/admin/profile}">Thông tin tài khoản</a>
+                                <a class="dropdown-item" href="javascript:void(0)" onclick="changePassword()">Thay đổi
+                                    mật khẩu</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="javascript:void(0)" onclick="Logout()">Đăng xuất</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </nav>
+        <!-- Navbar -->
+
+        <!-- Sidebar -->
+        <div class="sidebar-fixed position-fixed">
+
+            <a class="logo-wrapper waves-effect"></a>
+
+            <div class="list-group list-group-flush">
+                <a th:href="@{/admin/home}" class="list-group-item active waves-effect">
+                    <i class="fa fa-home mr-3"></i>Trang chủ</a>
+                <a th:href="@{/admin/employee}" th:if="${user.role=='ROLE_ADMIN'}"
+                   class="list-group-item list-group-item-action waves-effect">
+                    <i class="fa fa-user mr-3"></i>Nhân viên</a>
+                <a th:href="@{/admin/product}" class="list-group-item list-group-item-action waves-effect">
+                    <i class="fa fa-laptop mr-3"></i>Sản phẩm</a>
+                <a th:href="@{/admin/supply}" class="list-group-item list-group-item-action waves-effect">
+                    <i class="fas fa-city mr-3"></i>Nhà cung cấp</a>
+                <a th:href="@{/admin/category}" class="list-group-item list-group-item-action waves-effect">
+                    <i class="fa fa-list mr-3"></i>Danh mục</a>
+                <a th:href="@{/admin/order}" class="list-group-item list-group-item-action waves-effect">
+                    <i class="fas fa-shopping-cart mr-3"></i>Đơn hàng</a>
+                <a th:href="@{/admin/advertise}" class="list-group-item list-group-item-action waves-effect">
+                    <i class="fab fa-adversal mr-3"></i>Quảng cáo</a>
+                <a th:href="@{/admin/warehouse}" class="list-group-item list-group-item-action waves-effect">
+                    <i class="fa fa-warehouse mr-3"></i>Kho</a>
+            </div>
+
+        </div>
+        <!-- Sidebar -->
+
+    </header>
+</th:block>
+</body>
+</html>

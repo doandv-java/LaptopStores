@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Doan Stores</title>
+    <!-- Font Awesome -->
+    <!--    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">-->
+    <link rel="stylesheet" th:href="@{/webjars/font-awesome/5.12.0/css/all.css}">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" th:href="@{/webjars/mdbootstrap-bootstrap-material-design/4.8.8/css/bootstrap.min.css}">
+    <!-- Material Design Bootstrap -->
+    <link rel="stylesheet" th:href="@{/webjars/mdbootstrap-bootstrap-material-design/4.8.8/css/mdb.min.css}">
+    <!-- Your custom styles (optional) -->
+    <link rel="stylesheet" th:href="@{/css/admin.css}">
+</head>
+<body>
+<div class="container-for-admin">
+    <!--Main Navigation-->
+    <th:block th:replace="admin/fragments/header::header(${user})"/>
+    <!--Main Navigation-->
+    <!--Main layout-->
+    <main class="pt-5 mx-lg-5">
+        <div class="container-fluid mt-5">
+            <div class="row">
+                <div class="col-sm-3 text-center">
+                    <img src="http://placehold.it/380x500" th:src="@{${user.imageLink}}" id="image_view" alt=""
+                         width="80%" height="50%"
+                         class="img-rounded img-responsive">
+                    <div>
+                        <h4 th:text="${user.name}"></h4>
+                        <small><cite th:title="${user.address}"><i class="ti-location-pin"
+                                                                   th:text="${user.address}"></i></cite></small>
+                        <p><span th:text="${user.userName}"></span><br>
+                            <span th:text="${user.birthDay}"></span></p>
+                    </div>
+
+                </div>
+                <div class="col-sm-9 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <form class="forms-sample" id="profileForm">
+                                <div>
+                                    <input type="hidden" id="id" th:value="${user.id}">
+                                    <input type="hidden" id="role" th:value="${user.role}">
+                                    <input type="hidden" id="imageLink" th:value="${user.imageLink}">
+                                    <input type="hidden" id="state" th:value="${user.state}">
+                                    <input type="hidden" id="deleted" th:value="${user.deleted}">
+                                    <input type="hidden" id="userNameOld" th:value="${user.userName}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="userName">Email</label>
+                                    <input type="email" disabled="true" class="form-control" id="userName"
+                                           placeholder="Email" th:value="${user.userName}">
+                                    <p id="userName_errors" class="error">Validate</p>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="name">Họ tên</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Họ tên"
+                                           th:value="${user.name}">
+                                    <p id="name_errors" class="error">Validate</p>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="birthDay">Ngày sinh</label>
+                                    <input type="date" class="form-control" id="birthDay" placeholder="dd/MM/yyyy"
+                                           th:value="${user.birthDay}">
+                                    <p id="birthDay_errors" class="error">Validate</p>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone">Số điện thoại</label>
+                                    <input type="text" class="form-control" id="phone" placeholder="Số điện thoại"
+                                           th:value="${user.phone}">
+                                    <p id="phone_errors" class="error">Validate</p>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="gender">Giới tính</label>
+                                    <select class="form-control" id="gender" name="gender" th:value="${user.gender}">
+                                        <option value=0 name="gender" th:selected="${user.gender==0}">Nam</option>
+                                        <option value=1 name="gender" th:selected="${user.gender==1}">Nữ</option>
+                                    </select>
+                                    <p id="gender_errors" class="error">Validate</p>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Ảnh nhân viên</label>
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                                        </div>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="image"
+                                                   aria-describedby="inputGroupFileAddon01">
+                                            <label class="custom-file-label" for="image">Choose image</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="address">Địa chỉ</label>
+                                    <input type="text" class="form-control" id="address" placeholder="Địa chỉ"
+                                           th:value="${user.address}">
+                                    <p id="address_errors" class="error">Validate</p>
+                                </div>
+
+                                <button type="button" class="btn btn-primary mr-2" id="submitBtn">Cập nhật</button>
+                                <button type="button" class="btn btn-secondary"><a>Hủy bỏ</a></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--Main layout-->
+
+    <!--Footer-->
+    <th:block th:replace="admin/fragments/footer::footer"/>
+
+    <script th:src="@{/js/profile.js}"></script>
+    <!--/.Footer-->
+</div>
+</body>
+</html>
