@@ -1,0 +1,134 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Doan Stores</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <link rel="stylesheet" th:href="@{/webjars/font-awesome/5.12.0/css/all.css}">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" th:href="@{/webjars/mdbootstrap-bootstrap-material-design/4.8.8/css/bootstrap.min.css}">
+    <!-- Material Design Bootstrap -->
+    <link rel="stylesheet" th:href="@{/webjars/mdbootstrap-bootstrap-material-design/4.8.8/css/mdb.min.css}">
+    <!-- Your custom styles (optional) -->
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+</head>
+
+<body class="login-page">
+
+<!-- Main Navigation -->
+<header>
+    <!-- Intro Section -->
+    <section class="view intro-2">
+        <div class="mask rgba-stylish-strong h-100 d-flex justify-content-center align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-5 col-lg-6 col-md-10 col-sm-12 mx-auto mt-5">
+                        <div class="card">
+                            <h5 class="card-header info-color white-text text-center py-4">
+                                <strong>Sign in</strong>
+                            </h5>
+
+                            <!--Card content-->
+                            <div class="card-body px-lg-5 pt-0">
+
+                                <!-- Form -->
+                                <form class="text-center" style="color: #757575;" th:action="@{/login}" method="post">
+                                    <p th:if="${param.error}">Đăng nhập không th</p>
+                                    <!-- Email -->
+                                    <div class="md-form">
+                                        <input type="email" id="materialLoginFormEmail" class="form-control"
+                                               name="username">
+                                        <label for="materialLoginFormEmail">E-mail</label>
+                                    </div>
+
+                                    <!-- Password -->
+                                    <div class="md-form">
+                                        <input type="password" id="materialLoginFormPassword" class="form-control"
+                                               name="password">
+                                        <label for="materialLoginFormPassword">Password</label>
+                                    </div>
+
+                                    <div class="d-flex justify-content-around">
+                                        <div>
+                                            <!-- Remember me -->
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input"
+                                                       id="materialLoginFormRemember">
+                                                <label class="form-check-label" for="materialLoginFormRemember">Remember
+                                                    me</label>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <!-- Forgot password -->
+                                            <a href="">Forgot password?</a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Sign in button -->
+                                    <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0"
+                                            type="submit">Sign in
+                                    </button>
+
+                                    <!-- Register -->
+                                    <p>Not a member?
+                                        <a href="">Register</a>
+                                    </p>
+
+                                    <!-- Social login -->
+                                    <p>or sign in with:</p>
+                                    <a type="button" class="btn-floating btn-fb btn-sm">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a type="button" class="btn-floating btn-tw btn-sm">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a type="button" class="btn-floating btn-li btn-sm">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                    <a type="button" class="btn-floating btn-git btn-sm">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+
+                                </form>
+                                <!-- Form -->
+
+                            </div>
+
+                        </div>
+                        <!-- Material form login -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Intro Section -->
+
+</header>
+<!-- Main Navigation -->
+
+<!-- SCRIPTS -->
+<!-- JQuery -->
+<script type="text/javascript"
+        th:src="@{/webjars/mdbootstrap-bootstrap-material-design/4.8.8/js/jquery-3.4.1.min.js}"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript"
+        th:src="@{/webjars/mdbootstrap-bootstrap-material-design/4.8.8/js/popper.min.js}"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript"
+        th:src="@{/webjars/mdbootstrap-bootstrap-material-design/4.8.8/js/bootstrap.min.js}"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" th:src="@{/webjars/mdbootstrap-bootstrap-material-design/4.8.8/js/mdb.js}"></script>
+<div class="hiddendiv common"></div>
+
+<!-- Custom scripts -->
+<script>
+
+    new WOW().init();
+
+</script>
+
+</body>
+</html>

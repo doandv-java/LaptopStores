@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<th:block th:fragment="footer">
+
+
+    <!--    Change Password Modal-->
+    <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <form>
+                <div class="modal-content">
+                    <div class="modal-header text-primary">
+                        <h5 class="modal-title" id="changePassword">Thay đổi mật khẩu</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                            </div>
+                            <input type="password" id="passwordOld" class="form-control" placeholder="Mật khẩu cũ">
+                            <div><label class="error" id="passwordOld_errors"></label></div>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                            </div>
+                            <input type="password" id="passwordNew" class="form-control" placeholder="Mật khẩu mới">
+                            <div><label class="error" id="passwordNew_errors"></label></div>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label for="confirmPassword">
+                                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                </label>
+                            </div>
+                            <input type="password" id="confirmPassword" class="form-control"
+                                   placeholder="Xác nhận mật khẩu">
+                            <div><label class="error" id="confirmPassword_errors"></label></div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                        <button type="button" class="btn btn-primary" id="changePassBtn">Thay đổi</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="modal fade" id="logoutConfirm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-primary">
+                    <h5 class="modal-title" id="exampleModalLabel">Xác nhận</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Bạn xác nhận thoát khỏi chương trình phải không?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                    <button type="button" class="btn btn-primary" id="logoutBtn">Xác nhận</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript"
+            th:src="@{/webjars/mdbootstrap-bootstrap-material-design/4.8.8/js/jquery-3.4.1.min.js}"></script>
+<!--    <script type="text/javascript"-->
+<!--            th:src="@{/webjars/jquery/1.9.1/jquery.min.js}"></script>-->
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript"
+            th:src="@{/webjars/mdbootstrap-bootstrap-material-design/4.8.8/js/popper.min.js}"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+            th:src="@{/webjars/mdbootstrap-bootstrap-material-design/4.8.8/js/bootstrap.min.js}"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" th:src="@{/webjars/mdbootstrap-bootstrap-material-design/4.8.8/js/mdb.js}"></script>
+    <!--    <script type="text/javascript" src="/webjars/jquery-validation/1.19.0/jquery.validate.min.js"></script>-->
+    <div class="hiddendiv common"></div>
+    <script type="text/javascript" th:src="@{/js/admin.js}"></script>
+
+    <!-- Custom scripts -->
+    <script>
+
+        new WOW().init();
+
+    </script>
+
+
+</th:block>
+</body>
+</html>
